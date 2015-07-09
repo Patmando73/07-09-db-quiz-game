@@ -6,3 +6,12 @@
     visibility: hidden;
     position: absolute;
 }
+
+.secret {
+    visibility: hidden;
+    position: absolute;
+}
+
+#next {
+    visibility: hidden;
+}

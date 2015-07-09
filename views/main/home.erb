@@ -1,4 +1,19 @@
  <div id="quiz">
+   <div id="question_total" class="secret">
+     <%= @num %>
+   </div>
+   <div id="answer1" class="secret">
+     <%= @question1.answer %>
+   </div>
+   <div id="answer2" class="secret">
+     <%= @question2.answer %>
+   </div>
+   <div id="answer3" class="secret">
+     <%= @question3.answer %>
+   </div>
+   <div id="answer4" class="secret">
+     <%= @question4.answer %>
+   </div>
     <div id="question1" class="current_question">
       <div id="question1_content">
         <%= @question1.question %>

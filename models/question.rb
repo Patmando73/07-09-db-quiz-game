@@ -13,4 +13,12 @@ class Question
     @choice = options["choice"]
     @answer = options["answer"]
   end
+  def self.num_of_questions
+
+    result = CONNECTION.execute("SELECT COUNT(*) FROM questions;").first[0]
+
+    return result
+  end
+
+
 end

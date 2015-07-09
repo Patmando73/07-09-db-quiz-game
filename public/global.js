@@ -2,6 +2,7 @@
 var round = 0;
 // sets the starting number of correct answers to 0
 var correct_answers = 0;
+var total_questions = document.getElementById("question_total").innerHTML.slice(6,7)
 // questions stored as JS Objects
 //var question1 = {question: "This ballet, composed by Igor Stravinsky and choreographed by Vaslav Nijinsky, almost caused a riot at its 1913 premiere.", choices: "A - Coppelia\nB - The Rite of Spring\nC - Les Sylphides\nD - The Nutcracker", answer: "b"};
 //
@@ -55,8 +56,10 @@ function given_answer() {
 // answer_text - String (ideally the user's input from the form)
 // checks to see if that matches the answer in the question Object
 // returns True/False
+var correct_answer
 function is_correct_answer(answer_text) {
-  if (answer_text.toLowerCase() === questions[round].answer) {
+  correct_answer = "answer" + (round + 1);
+  if (answer_text.toLowerCase() === document.getElementById(correct_answer).innerHTML.slice(6,7)) {
       return true;
   } else {
       return false;
@@ -82,6 +85,7 @@ function process_answer_submission() {
   var user_answer = given_answer();
   update_question_result(is_correct_answer(user_answer));
   document.getElementById("submitter").style.visibility="hidden";
+  document.getElementById("next").style.visibility="visible";
 };
 
 // when the submitter button is clicked, process_answer_submission is ran
@@ -101,7 +105,7 @@ function clear_question_result () {
 // returns False if the game is not over
 // returns True if the round number equals the number of questions
 function is_game_over () {
-  if (round < questions.length) {
+  if (round < total_questions) {
       return false; 
   } else {
       return true;
@@ -113,6 +117,7 @@ function is_game_over () {
 function next_button() {
   clear_answer();
   clear_question_result();
+  document.getElementById("next").style.visibility="hidden";
   round++;
   document.getElementById("submitter").style.visibility="visible";
   if (is_game_over() === true) {
@@ -127,6 +132,6 @@ document.getElementById("next").onclick = next_button;
 
 // adds text to the total_result div
 function final_total() {
-  var final_statement = "You answered " + correct_answers + " out of " + questions.length + "!\nThat's " + (correct_answers / questions.length * 100).toFixed(0) + "% correct";
+  var final_statement = "You answered " + correct_answers + " out of " + total_questions + "!\nThat's " + (correct_answers / total_questions * 100).toFixed(0) + "% correct";
   document.getElementById("total_result").innerText = final_statement;
 }
