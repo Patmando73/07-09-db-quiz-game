@@ -1,0 +1,8 @@
+.current_question {
+    visibility: visible;
+}
+
+.question_template {
+    visibility: hidden;
+    position: absolute;
+}
