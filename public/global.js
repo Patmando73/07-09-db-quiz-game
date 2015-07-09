@@ -3,32 +3,32 @@ var round = 0;
 // sets the starting number of correct answers to 0
 var correct_answers = 0;
 // questions stored as JS Objects
-var question1 = {question: "This ballet, composed by Igor Stravinsky and choreographed by Vaslav Nijinsky, almost caused a riot at its 1913 premiere.", choices: "A - Coppelia\nB - The Rite of Spring\nC - Les Sylphides\nD - The Nutcracker", answer: "b"};
-
-var question2 = {question: "Twyla Tharp won a Tony for Best Choroeography in 2003 for this Broadway show, based on the music of Billy Joel.", choices: "A - Kinky Boots\nB - Spiderman: Turn Off the Dark\nC - Movin' Out\nD - Hairspray", answer: "c"};
-
-var question3 = {question: "An average cat has this many tails.", choices: "A - 1\nB - 2\nC - 3\nD - 4", answer: "a" };
-
-var question4 = {question: "This is not gluten free.", choices: "A - a Nectarine\nB - a Brussel Sprout\nC - a Chicken Egg\nD - a Beer", answer: "d" };
+//var question1 = {question: "This ballet, composed by Igor Stravinsky and choreographed by Vaslav Nijinsky, almost caused a riot at its 1913 premiere.", choices: "A - Coppelia\nB - The Rite of Spring\nC - Les Sylphides\nD - The Nutcracker", answer: "b"};
+//
+//var question2 = {question: "Twyla Tharp won a Tony for Best Choroeography in 2003 for this Broadway show, based on the music of Billy Joel.", choices: "A - Kinky Boots\nB - Spiderman: Turn Off the Dark\nC - Movin' Out\nD - Hairspray", answer: "c"};
+//
+//var question3 = {question: "An average cat has this many tails.", choices: "A - 1\nB - 2\nC - 3\nD - 4", answer: "a" };
+//
+//var question4 = {question: "This is not gluten free.", choices: "A - a Nectarine\nB - a Brussel Sprout\nC - a Chicken Egg\nD - a Beer", answer: "d" };
 
 // question Objects stored in a JS Array
-var questions = [question1, question2, question3, question4];
+//var questions = [question1, question2, question3, question4];
 
 
-function load_questions() {
-  var content;
-  var choices;
-  var stored_content;
-  for (counter = 1; counter < questions.length + 1; counter++) {
-    content = "question" + counter +"_content";
-    choices = "question" + counter + "_choices";
-    stored_content = ("question" + counter);
-    document.getElementById(content).innerText = eval(stored_content).question;
-    document.getElementById(choices).innerText = eval(stored_content).choices;
-  }
-
-}
-load_questions();
+//function load_questions() {
+//  var content;
+//  var choices;
+//  var stored_content;
+//  for (counter = 1; counter < questions.length + 1; counter++) {
+//    content = "question" + counter +"_content";
+//    choices = "question" + counter + "_choices";
+//    stored_content = ("question" + counter);
+//    document.getElementById(content).innerText = eval(stored_content).question;
+//    document.getElementById(choices).innerText = eval(stored_content).choices;
+//  }
+//
+//}
+//load_questions();
 var question_tabs = ["question1", "question2", "question3", "question4"]
 
 
